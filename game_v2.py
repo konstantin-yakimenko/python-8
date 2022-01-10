@@ -15,19 +15,19 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-    lo = 1
-    hi = 100
+    min = 1
+    max = 100
 
-    while lo <= hi:
+    while min <= max:
         # Бинарный поиск
-        mid = int((lo + hi)/2)
+        mid = int((min + max)/2)
         count += 1
         if mid == number:
             return count
         if mid > number:
-            hi = mid - 1
+            max = mid - 1
         else:
-            lo = mid + 1
+            min = mid + 1
     return count
 
 
